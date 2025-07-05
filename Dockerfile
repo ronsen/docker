@@ -15,8 +15,7 @@ RUN apt update && apt upgrade -y && \
 
 RUN curl -sLS https://getcomposer.org/installer | php -- --install-dir=/usr/bin/ --filename=composer
 
-RUN curl -s https://frankenphp.dev/install.sh | sh
-RUN mv frankenphp /usr/local/bin/
+RUN ln -s /usr/local/bin/frankenphp /usr/local/bin/frankenphp
 
 COPY . .
 

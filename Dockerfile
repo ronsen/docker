@@ -21,9 +21,9 @@ COPY . .
 
 RUN composer install --optimize-autoloader --no-dev
 
-RUN chown www-data:www-data -R storage
-RUN chown www-data:www-data database
-RUN chown www-data:www-data database/database.sqlite
+RUN chown www-data:www-data -R storage && \
+	chown www-data:www-data database && \
+	chown www-data:www-data database/database.sqlite
 
 RUN php artisan storage:link
 
